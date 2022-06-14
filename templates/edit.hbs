@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+     <link rel="stylesheet" href="/CSS/form.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+    {{>header}}
+<div id="body">
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+        {{#each edit}}
+      <form action="/updateStudent/{{this.id}}" method="POST">
+        <div class="user-details">
+           <div class="input-box">
+               
+            <span class="details">Name</span>
+            <input type="text" name="Name" value={{this.Name}} required>
+          </div>                          
+          <br>
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input type="number" name="Age"  value={{this.Age}}  required>
+          </div>
+      
+        <div class="button">
+          <input type="submit" value="Update">
+        </div>         
+      </form>
+      {{/each}}
+    </div>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+
+  <link rel="stylesheet" href="/CSS/style.css">
+    <title>Handlebars Demo</title>
+</head>
+<body>
+  {{>header}}
+
+  <table id="Table">
+    <th>Name</th>
+    <th>Age</th>
+    <th>Action</th> 
+         {{#each data}}
+            <tr>
+            <td>{{this.Name}}</td>
+            <td>{{this.Age}}</td>           
+            <td>              
+              <a href="delete/{{id}}" type="button" onclick="return confirm('Are you sure to delete this record ?');" class="fa fa-trash">
+                </a>             
+                <button>
+                <a href="editStudent/{{id}}" class="fa fa-edit"></a>     
+                </button>
+            </td>                                                                     
+ 
+            </tr>
+            {{/each}}
+        </table>
+</body>
+</html>
